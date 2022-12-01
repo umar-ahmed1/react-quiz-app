@@ -4,19 +4,48 @@ import Home from './components/Home'
 
 export default function App() {
 
-  //default render the home section
+  //by default render the home section
   const [section,setSection] = React.useState("home-section")
-
   //function that changes the section rendered to a different section
   function changeSection(newSection){
     setSection(newSection)
   }
 
+  //state for selected category which is changed by the home component
   const [selectedCategory,setSelectedCategory] = React.useState('GENERAL_KNOWLEDGE')
-
+  //function to change selected category
   function handleChange(e){
     setSelectedCategory(e.target.value)
   }
+
+  //logic for getting data
+  const [data,setData] = React.useState([])
+  React.useEffect( () => {
+    if(selectedCategory === 'GENERAL_KNOWLEDGE'){
+      fetch('https://opentdb.com/api.php?amount=5&category=9')
+      .then(res => res.json())
+      .then(dataRecieved => setData(dataRecieved.results))
+      console.log(data)
+    }
+    if(selectedCategory === 'SCIENCE_NATURE'){
+      fetch('https://opentdb.com/api.php?amount=5&category=17')
+      .then(res => res.json())
+      .then(dataRecieved => setData(dataRecieved.results))
+      console.log(data)
+    }
+    if(selectedCategory === 'ANIMALS'){
+      fetch('https://opentdb.com/api.php?amount=5&category=27')
+      .then(res => res.json())
+      .then(dataRecieved => setData(dataRecieved.results))
+      console.log(data)
+    }
+  },[selectedCategory])
+
+
+
+
+
+
 
   return (
     <main className="main">
@@ -30,6 +59,7 @@ export default function App() {
         {section === "trivia-section" && 
           <Trivia
           category={selectedCategory}
+          data = {data}
           />
         
         }
@@ -37,19 +67,3 @@ export default function App() {
     </main>
   );
 }
-
-
-/*
-    //make the api call and store the data
-    let GENERAL_KNOWLEDGE = fetch('https://opentdb.com/api.php?amount=5&category=9')
-    .then(res => res.json())
-    .then(dataRecieved => dataRecieved.results)
-
-    let SCIENCE_NATURE = fetch('https://opentdb.com/api.php?amount=5&category=17')
-    .then(res => res.json())
-    .then(dataRecieved => dataRecieved.results)
-
-    let ANIMALS = fetch('https://opentdb.com/api.php?amount=5&category=27')
-    .then(res => res.json())
-    .then(dataRecieved => ANIMALS = dataRecieved.results)
-    */
