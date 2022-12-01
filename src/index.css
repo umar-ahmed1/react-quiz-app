@@ -70,3 +70,8 @@ body{
   padding:20px;
   position:relative;
 }
+
+.select-wrapper{
+  display:flex;
+  align-items:center;
+}
