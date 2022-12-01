@@ -27,15 +27,20 @@ export default function Select(){
         ANIMALS: allAnimals
     }
 
+    const [selectedCategory,setSelectedCategory] = React.useState('GENERAL_KNOWLEDGE')
 
-    console.log(CATEGORIES.GENERAL_KNOWLEDGE)
+    function handleChange(e){
+            setSelectedCategory(e.target.value)          
+    }
+    
 
     return (
         <div className="select-screen">
             <select 
-          name="CATEGORY_SELECTION" 
-          id="CATEGORY_SELECTION">
-                <option value="choose">--CHOOSE--</option>
+            name="CATEGORY_SELECTION" 
+            id="CATEGORY_SELECTION"
+            value={selectedCategory}
+            onChange={handleChange}>
                 <option value="GENERAL_KNOWLEDGE">General Knowledge</option>
                 <option value="SCIENCE_NATURE">Science & Nature</option>
                 <option value="ANIMALS">Animals</option>
