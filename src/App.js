@@ -25,19 +25,16 @@ export default function App() {
       fetch('https://opentdb.com/api.php?amount=5&category=9')
       .then(res => res.json())
       .then(dataRecieved => setData(dataRecieved.results))
-      console.log(data)
     }
     if(selectedCategory === 'SCIENCE_NATURE'){
       fetch('https://opentdb.com/api.php?amount=5&category=17')
       .then(res => res.json())
       .then(dataRecieved => setData(dataRecieved.results))
-      console.log(data)
     }
     if(selectedCategory === 'ANIMALS'){
       fetch('https://opentdb.com/api.php?amount=5&category=27')
       .then(res => res.json())
       .then(dataRecieved => setData(dataRecieved.results))
-      console.log(data)
     }
   },[selectedCategory])
 
