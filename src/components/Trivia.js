@@ -17,6 +17,11 @@ export default function Trivia(props){
     return(
         <div className="trivia-screen">
             {allElements}
+            <div className="display-answers">
+                <div className="how-many-correct"></div>
+                <button className="check-answers-button">Check answers</button>
+            </div>
+            
         </div>
     )
 
