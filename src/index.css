@@ -82,7 +82,16 @@ body{
 }
 
 .trivia-question{
+  display:flex;
+  flex-direction:column;
   text-align:left;
   padding:10px;
   font-weight:700;
+}
+
+.answers-div{
+  font-weight:400;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
 }
