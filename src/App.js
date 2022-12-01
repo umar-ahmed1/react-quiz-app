@@ -1,6 +1,6 @@
 import React from 'react'
 import Home from './components/Home'
-import Select from './components/Select'
+import Trivia from './components/Trivia'
 
 export default function App() {
   //default render the home section
@@ -20,8 +20,8 @@ export default function App() {
         changeSection = {changeSection}
         />
         }
-        {section === "select-section" && 
-        <Select
+        {section === "trivia-section" && 
+        <Trivia
         />
         }
 

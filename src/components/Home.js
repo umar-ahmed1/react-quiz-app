@@ -44,7 +44,7 @@ export default function Home(props){
           onClick={ () => props.changeSection("select-section")}>Start</button>
 
             <div className="select-wrapper">
-                <h2>Select a Category</h2>
+                <h2 className="select-label">Select a Category</h2>
                 <select 
                 className="category-selection"
                 name="CATEGORY_SELECTION" 
