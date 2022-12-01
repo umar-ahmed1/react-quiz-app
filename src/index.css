@@ -74,7 +74,7 @@ body{
   flex-direction:column;
   align-items:start;
   background:white;
-  height:350px;
+  height:450px;
   width:400px;
   border-radius:17px;
   padding:20px;
@@ -94,4 +94,11 @@ body{
   display:flex;
   justify-content:space-between;
   align-items:center;
+}
+
+.answer-box{
+  border: 0.77px solid #4D5B9E;
+  border-radius: 7.7px;
+  width:100%;
+  height:100%;
 }

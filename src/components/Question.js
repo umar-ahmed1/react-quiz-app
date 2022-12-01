@@ -12,7 +12,7 @@ export default function Question(props){
     console.log(allAnswers)
 
     const answerButtonElements = allAnswers.map(answer => {
-        return <button className="answer-button">{answer}</button>
+        return <div className="answer-box">{answer}</div>
     })
 
 
