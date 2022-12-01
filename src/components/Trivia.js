@@ -1,27 +1,22 @@
 import React from 'react'
+import Question from './Question'
 
 export default function Trivia(props){
     console.log(props.data)
+
+    const allElements = props.data.map(item => {
+        //create a question element with all the relative data
+        return <Question
+                    key={item.index}
+                    question={item.question}
+                    correct_answer={item.correct_answer}
+                    incorrect_answers={item.incorrect_answers}
+                />
+    })
+
     return(
         <div className="trivia-screen">
-            <div className="trivia-question">
-                <div className="trivia-question-title">{props.data[0].question}</div>
-            </div>
-            <div className="trivia-question">
-                <div className="trivia-question-title">{props.data[1].question}</div>
-            </div>
-            <div className="trivia-question">
-                <div className="trivia-question-title">{props.data[2].question}</div>
-            </div>
-            <div className="trivia-question">
-                <div className="trivia-question-title">{props.data[3].question}</div>
-            </div>
-            <div className="trivia-question">
-                <div className="trivia-question-title">{props.data[4].question}</div>
-            </div>
-            
-
-        
+            {allElements}
         </div>
     )
 

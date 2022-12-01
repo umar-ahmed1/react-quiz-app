@@ -22,17 +22,17 @@ export default function App() {
   const [data,setData] = React.useState([])
   React.useEffect( () => {
     if(selectedCategory === 'GENERAL_KNOWLEDGE'){
-      fetch('https://opentdb.com/api.php?amount=5&category=9')
+      fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple')
       .then(res => res.json())
       .then(dataRecieved => setData(dataRecieved.results))
     }
     if(selectedCategory === 'SCIENCE_NATURE'){
-      fetch('https://opentdb.com/api.php?amount=5&category=17')
+      fetch('https://opentdb.com/api.php?amount=5&category=17&type=multiple')
       .then(res => res.json())
       .then(dataRecieved => setData(dataRecieved.results))
     }
     if(selectedCategory === 'ANIMALS'){
-      fetch('https://opentdb.com/api.php?amount=5&category=27')
+      fetch('https://opentdb.com/api.php?amount=5&category=27&type=multiple')
       .then(res => res.json())
       .then(dataRecieved => setData(dataRecieved.results))
     }
