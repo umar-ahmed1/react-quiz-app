@@ -11,7 +11,7 @@ export default function App() {
     setSection(newSection);
   }
 
-  
+
 
   return (
     <main className="main">
@@ -21,7 +21,8 @@ export default function App() {
         />
         }
         {section === "select-section" && 
-        <Select/>
+        <Select
+        />
         }
 
     </main>
