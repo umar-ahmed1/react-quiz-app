@@ -1,3 +1,59 @@
 body{
   background:grey;
 }
+
+.main{
+  margin-top:30%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.wrapper{
+  font-family: 'Karla';
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  background:white;
+  height:300px;
+  width:400px;
+  border-radius:17px;
+  padding:20px;
+  position:relative;
+}
+
+.title{
+  margin-top:20px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 37px;
+  color: #293264;
+
+}
+
+.description{
+  margin-top:15px;
+  max-width:270px;
+  text-align:center;
+}
+
+.start-button{
+  margin-top:20px;
+  background: #293264;
+  color:white;
+  width:150px;
+  height:50px;
+  font-size:20px;
+  border-radius:15px;
+}
+
+.start-button:hover{
+  cursor:pointer;
+}
+
+.author{
+  position:absolute;
+  bottom:10px;
+  color:#7a7979;
+}
