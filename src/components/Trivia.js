@@ -1,8 +1,9 @@
 import React from 'react'
 
-export default function Trivia(){
+export default function Trivia(props){
+    console.log(props.data)
     return(
-        <div>Hi</div>
+        <div>hi</div>
     )
 
 }
