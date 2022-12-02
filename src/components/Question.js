@@ -9,10 +9,12 @@ export default function Question(props){
         allAnswers[i] = allAnswers[j];
         allAnswers[j] = temp;
     }
-    console.log(allAnswers)
 
     const answerButtonElements = allAnswers.map(answer => {
-        return <div className="answer-box">{answer}</div>
+        return <div 
+                className="answer-box"
+                onClick={ ()=> props.chooseAnswer(props.id,answer)}
+                >{answer}</div>
     })
 
 
