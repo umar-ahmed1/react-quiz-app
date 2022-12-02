@@ -1,6 +1,7 @@
 import React from 'react'
 import Trivia from './components/Trivia'
 import Home from './components/Home'
+import {nanoid} from 'nanoid'
 
 export default function App() {
 
@@ -18,32 +19,45 @@ export default function App() {
     setSelectedCategory(e.target.value)
   }
 
-  //logic for getting data
+  //logic for getting data everytime the selected category changes
   const [data,setData] = React.useState([])
   React.useEffect( () => {
     if(selectedCategory === 'GENERAL_KNOWLEDGE'){
       fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple')
       .then(res => res.json())
       .then(dataRecieved => setData(dataRecieved.results))
+      .then(data => mapData(data))
     }
     if(selectedCategory === 'SCIENCE_NATURE'){
       fetch('https://opentdb.com/api.php?amount=5&category=17&type=multiple')
       .then(res => res.json())
-      .then(dataRecieved => setData(dataRecieved.results))
+      .then(dataRecieved => mapData(dataRecieved.results))
     }
     if(selectedCategory === 'ANIMALS'){
       fetch('https://opentdb.com/api.php?amount=5&category=27&type=multiple')
       .then(res => res.json())
-      .then(dataRecieved => setData(dataRecieved.results))
+      .then(dataRecieved => mapData(dataRecieved.results))
     }
-
   },[selectedCategory])
 
+  //function to create the object with the data
+  function mapData(data){
+    setData(prevData => prevData.map(data => {
+      data.key=nanoid()
+      return {
+        key:data.key,
+        question:data.question,
+        correct_answer:data.correct_answer,
+        incorrect_answers:data.incorrect_answers,
+        selected_answer:''
+      }
+    }))
+  }
 
 
 
 
-
+  
 
   return (
     <main className="main">
@@ -59,7 +73,6 @@ export default function App() {
           category={selectedCategory}
           data = {data}
           />
-        
         }
 
     </main>

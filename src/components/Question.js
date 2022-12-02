@@ -17,7 +17,6 @@ export default function Question(props){
                 >{answer}</div>
     })
 
-
     return(
         <div className="trivia-question">
             <div className="trivia-question-title">{props.question}</div>
