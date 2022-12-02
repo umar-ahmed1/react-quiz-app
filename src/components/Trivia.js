@@ -21,7 +21,15 @@ export default function Trivia(props){
 
     //function to handle when an answer is chosen
     function chooseAnswer(key,answer){
+        //we want to map over the data and change the answer to selected
         console.log(`key:${key},answer:${answer}`)
+        props.setData(prevData => prevData.map(data => {
+            return {
+              ...data,
+              selected_answer:answer
+            }
+          }))
+        
         
     }
 

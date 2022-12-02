@@ -44,13 +44,21 @@ export default function App() {
   function mapData(data){
     setData(prevData => prevData.map(data => {
       data.key=nanoid()
-      
+      //create an array with all the answers then shuffle it
+      data.all_answers=[data.correct_answer,...data.incorrect_answers]
+      for (var i = data.all_answers.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1));
+      var temp = data.all_answers[i];
+      data.all_answers[i] = data.all_answers[j];
+      data.all_answers[j] = temp;
+      }
+
       return {
         key:data.key,
         question:data.question,
         correct_answer:data.correct_answer,
         incorrect_answers:data.incorrect_answers,
-        all_answers:[data.correct_answer,...data.incorrect_answers],
+        all_answers:data.all_answers,
         selected_answer:''
       }
     }))
@@ -74,6 +82,7 @@ export default function App() {
           <Trivia
           category={selectedCategory}
           data = {data}
+          setData = {setData}
           />
         }
 
