@@ -59,10 +59,17 @@ export default function App() {
         correct_answer:data.correct_answer,
         incorrect_answers:data.incorrect_answers,
         all_answers:data.all_answers,
-        selected_answer:''
+        selected_answer:null
       }
     }))
   }
+
+  //we want an effect ot run everytime the data is changed to see if any of
+  //the answers have been selected or not to change their color
+  React.useEffect( () => {
+    
+
+  },[data])
 
 
 
