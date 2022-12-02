@@ -44,11 +44,13 @@ export default function App() {
   function mapData(data){
     setData(prevData => prevData.map(data => {
       data.key=nanoid()
+      
       return {
         key:data.key,
         question:data.question,
         correct_answer:data.correct_answer,
         incorrect_answers:data.incorrect_answers,
+        all_answers:[data.correct_answer,...data.incorrect_answers],
         selected_answer:''
       }
     }))
@@ -57,7 +59,7 @@ export default function App() {
 
 
 
-  
+
 
   return (
     <main className="main">

@@ -14,6 +14,7 @@ export default function Trivia(props){
                     question={item.question}
                     correct_answer={item.correct_answer}
                     incorrect_answers={item.incorrect_answers}
+                    all_answers={item.all_answers}
                     chooseAnswer={chooseAnswer}
                 />
     })

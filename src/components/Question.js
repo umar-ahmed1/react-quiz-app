@@ -1,19 +1,20 @@
 import React from 'react'
+import {nanoid} from 'nanoid'
 
 export default function Question(props){
     //create an array with all the answers then shuffle it
-    const allAnswers = [props.correct_answer,...props.incorrect_answers]
-    for (var i = allAnswers.length - 1; i > 0; i--) {
+    for (var i = props.all_answers.length - 1; i > 0; i--) {
         var j = Math.floor(Math.random() * (i + 1));
-        var temp = allAnswers[i];
-        allAnswers[i] = allAnswers[j];
-        allAnswers[j] = temp;
+        var temp = props.all_answers[i];
+        props.all_answers[i] = props.all_answers[j];
+        props.all_answers[j] = temp;
     }
 
-    const answerButtonElements = allAnswers.map(answer => {
+    const answerButtonElements = props.all_answers.map(answer => {
         return <div 
                 className="answer-box"
                 onClick={ ()=> props.chooseAnswer(props.id,answer)}
+                key={nanoid()}
                 >{answer}</div>
     })
 
