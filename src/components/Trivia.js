@@ -17,6 +17,7 @@ export default function Trivia(props){
                     all_answers={item.all_answers}
                     selected_answer={item.selected_answer}
                     chooseAnswer={chooseAnswer}
+                    revealAnswers={props.revealAnswers}
                 />
     })
 

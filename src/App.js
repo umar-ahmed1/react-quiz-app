@@ -22,24 +22,28 @@ export default function App() {
   //logic for getting data everytime the selected category changes
   const [data,setData] = React.useState([])
   React.useEffect( () => {
-    if(selectedCategory === 'GENERAL_KNOWLEDGE'){
-      fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple')
-      .then(res => res.json())
-      .then(dataRecieved => setData(dataRecieved.results))
-      .then(data => mapData(data))
+    if(!revealAnswers){
+      if(selectedCategory === 'GENERAL_KNOWLEDGE'){
+        fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple')
+        .then(res => res.json())
+        .then(dataRecieved => setData(dataRecieved.results))
+        .then(data => mapData(data))
+        console.log('hi')
+      }
+      if(selectedCategory === 'SCIENCE_NATURE'){
+        fetch('https://opentdb.com/api.php?amount=5&category=17&type=multiple')
+        .then(res => res.json())
+        .then(dataRecieved => setData(dataRecieved.results))
+        .then(data => mapData(data))
+      }
+      if(selectedCategory === 'ANIMALS'){
+        fetch('https://opentdb.com/api.php?amount=5&category=27&type=multiple')
+        .then(res => res.json())
+        .then(dataRecieved => setData(dataRecieved.results))
+        .then(data => mapData(data))
+      }
     }
-    if(selectedCategory === 'SCIENCE_NATURE'){
-      fetch('https://opentdb.com/api.php?amount=5&category=17&type=multiple')
-      .then(res => res.json())
-      .then(dataRecieved => setData(dataRecieved.results))
-      .then(data => mapData(data))
-    }
-    if(selectedCategory === 'ANIMALS'){
-      fetch('https://opentdb.com/api.php?amount=5&category=27&type=multiple')
-      .then(res => res.json())
-      .then(dataRecieved => setData(dataRecieved.results))
-      .then(data => mapData(data))
-    }
+    
   },[selectedCategory])
 
   //function to create the object with the data
@@ -85,7 +89,9 @@ export default function App() {
     }
     //if answers are revealed we want to reset gamestate  
     else{
-      console.log('hi')
+      setRevealAnswers(false)
+      setSection("home-section")
+      setSelectedCategory("")
     }
     
   }
