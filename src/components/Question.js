@@ -3,12 +3,23 @@ import {nanoid} from 'nanoid'
 
 export default function Question(props){
 
+    function chooseStyle(answer){
+        if(answer === props.selected_answer){
+            return {backgroundColor:"D6DBF5"}
+        } else{
+            return {backgroundColor:"white"}
+        }
+
+    }
+
+
     const answerButtonElements = props.all_answers.map(answer => {
-        return <div 
+        return <button 
                 className="answer-box"
                 onClick={ ()=> props.chooseAnswer(props.id,answer)}
                 key={nanoid()}
-                >{answer}</div>
+                style={chooseStyle(answer)}
+                >{answer}</button>
     })
 
     return(

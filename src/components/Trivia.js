@@ -25,7 +25,6 @@ export default function Trivia(props){
         //we want to map over the data and change the answer to selected
         //but it has to be for the right question
         props.setData(prevData => prevData.map(data => {
-
             if(key === data.key){
                 return ({ 
                     ...data,
@@ -34,8 +33,6 @@ export default function Trivia(props){
             } else{
                 return(data)
             }
-
-            
           }))
     }
 
