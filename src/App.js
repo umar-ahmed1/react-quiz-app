@@ -31,12 +31,14 @@ export default function App() {
     if(selectedCategory === 'SCIENCE_NATURE'){
       fetch('https://opentdb.com/api.php?amount=5&category=17&type=multiple')
       .then(res => res.json())
-      .then(dataRecieved => mapData(dataRecieved.results))
+      .then(dataRecieved => setData(dataRecieved.results))
+      .then(data => mapData(data))
     }
     if(selectedCategory === 'ANIMALS'){
       fetch('https://opentdb.com/api.php?amount=5&category=27&type=multiple')
       .then(res => res.json())
-      .then(dataRecieved => mapData(dataRecieved.results))
+      .then(dataRecieved => setData(dataRecieved.results))
+      .then(data => mapData(data))
     }
   },[selectedCategory])
 
