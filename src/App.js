@@ -71,7 +71,9 @@ export default function App() {
   const [revealAnswers,setRevealAnswers] = React.useState(false)
   //function to check how many answers they got correct
   function checkAnswers(){
-    let sum=0
+    //if the answers are not revealed we find the score and disdplay it
+    if(!revealAnswers){
+      let sum=0
     data.forEach(item => {
       if(item.selected_answer === item.correct_answer){
         sum+=1
@@ -80,6 +82,12 @@ export default function App() {
     })
     //reveal the answers
     setRevealAnswers(true)
+    }
+    //if answers are revealed we want to reset gamestate  
+    else{
+      console.log('hi')
+    }
+    
   }
 
 

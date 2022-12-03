@@ -44,9 +44,9 @@ export default function Trivia(props){
                 {props.revealAnswers && <div className="how-many-correct">
                     {`You scored ${props.score}/5 correct answers`}
                 </div>}
-                    <button className="check-answers-button"
+                    {<button className="check-answers-button"
                         onClick={props.checkAnswers}
-                    >Check answers</button>
+                    >{props.revealAnswers ? "Play again":"Check answers"}</button>}
             </div>
         </div>
     )
