@@ -67,6 +67,8 @@ export default function App() {
   }
   //default the score is 0
   const [score,setScore] = React.useState(0)
+  //Reveal answers boolean
+  const [revealAnswers,setRevealAnswers] = React.useState(false)
   //function to check how many answers they got correct
   function checkAnswers(){
     let sum=0
@@ -76,7 +78,8 @@ export default function App() {
       }
       setScore(sum)
     })
-    console.log(score)
+    //reveal the answers
+    setRevealAnswers(true)
   }
 
 
@@ -96,6 +99,7 @@ export default function App() {
           setData = {setData}
           checkAnswers = {checkAnswers}
           score = {score}
+          revealAnswers = {revealAnswers}
           />
         }
 
