@@ -77,7 +77,6 @@ export default function App() {
       setScore(sum)
     })
     console.log(score)
-
   }
 
 
