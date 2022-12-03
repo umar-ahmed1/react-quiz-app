@@ -68,6 +68,7 @@ body{
   margin-right:10px;
 }
 
+
 .trivia-screen{
   font-family: 'Karla';
   display:flex;
@@ -75,7 +76,7 @@ body{
   align-items:start;
   background:white;
   height:100%;
-  width:400px;
+  width:550px;
   border-radius:17px;
   padding:20px;
   position:relative;
@@ -131,7 +132,7 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
-  width:380px;
+  width:550px;
 }
 
 .check-answers-button{
@@ -142,5 +143,15 @@ body{
   font-size:15px;
   border-radius:15px;
   margin-left:15px;
+  cursor:pointer;
 }
 
+.how-many-correct{
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 15px;
+  text-align: center;
+  color: #293264;  
+}

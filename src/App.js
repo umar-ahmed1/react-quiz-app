@@ -63,6 +63,21 @@ export default function App() {
       }
     }))
   }
+  //default the score is 0
+  const [score,setScore] = React.useState(0)
+  //function to check how many answers they got correct
+  function checkAnswers(){
+    let sum=0
+    data.forEach(item => {
+      if(item.selected_answer === item.correct_answer){
+        sum+=1
+      }
+      setScore(sum)
+    })
+    console.log(score)
+
+  }
+
 
   return (
     <main className="main">
@@ -78,6 +93,8 @@ export default function App() {
           category={selectedCategory}
           data = {data}
           setData = {setData}
+          checkAnswers = {checkAnswers}
+          score = {score}
           />
         }
 

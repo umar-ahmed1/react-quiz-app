@@ -5,11 +5,11 @@ export default function Question(props){
 
     function chooseStyle(answer){
         if(answer === props.selected_answer){
-            return {backgroundColor:"D6DBF5"}
+            return {backgroundColor:"D6DBF5",
+                    border: "2px solid #4D5B9E"}
         } else{
             return {backgroundColor:"white"}
         }
-
     }
 
 
