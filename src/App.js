@@ -64,18 +64,6 @@ export default function App() {
     }))
   }
 
-  //we want an effect ot run everytime the data is changed to see if any of
-  //the answers have been selected or not to change their color
-  React.useEffect( () => {
-    
-
-  },[data])
-
-
-
-
-
-
   return (
     <main className="main">
         {section === "home-section" && 
