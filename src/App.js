@@ -24,11 +24,10 @@ export default function App() {
   React.useEffect( () => {
     if(!revealAnswers){
       if(selectedCategory === 'GENERAL_KNOWLEDGE'){
-        fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple')
+        fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple'+`&${Math.random()}`)
         .then(res => res.json())
         .then(dataRecieved => setData(dataRecieved.results))
         .then(data => mapData(data))
-        console.log('hi')
       }
       if(selectedCategory === 'SCIENCE_NATURE'){
         fetch('https://opentdb.com/api.php?amount=5&category=17&type=multiple')
@@ -89,9 +88,12 @@ export default function App() {
     }
     //if answers are revealed we want to reset gamestate  
     else{
+      console.log('hi')
       setRevealAnswers(false)
       setSection("home-section")
-      setSelectedCategory("")
+      console.log('hi')
+      setScore(0)
+      setSelectedCategory("GENERAL_KNOWLEDGE")
     }
     
   }
