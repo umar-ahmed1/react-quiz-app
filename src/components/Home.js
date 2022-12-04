@@ -8,7 +8,7 @@ export default function Home(props){
             Pick a category, complete a trivia, and get graded!</div>
           <button 
           className="start-button"
-          onClick={ () => 
+          onClick={ props.selectedCategory==='CHOOSE' ? undefined : () => 
           props.changeSection("trivia-section")}>
             Start</button>
 
@@ -20,6 +20,7 @@ export default function Home(props){
                 id="CATEGORY_SELECTION"
                 value={props.selectedCategory}
                 onChange={props.handleChange}>
+                    <option value="CHOOSE">--CHOOSE--</option>
                     <option value="GENERAL_KNOWLEDGE">General Knowledge</option>
                     <option value="SCIENCE_NATURE">Science & Nature</option>
                     <option value="ANIMALS">Animals</option>

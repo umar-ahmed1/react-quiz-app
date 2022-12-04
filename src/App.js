@@ -13,7 +13,7 @@ export default function App() {
   }
 
   //state for selected category which is changed by the home component
-  const [selectedCategory,setSelectedCategory] = React.useState('GENERAL_KNOWLEDGE')
+  const [selectedCategory,setSelectedCategory] = React.useState('CHOOSE')
   //function to change selected category
   function handleChange(e){
     setSelectedCategory(e.target.value)
@@ -93,7 +93,7 @@ export default function App() {
       setSection("home-section")
       console.log('hi')
       setScore(0)
-      setSelectedCategory("GENERAL_KNOWLEDGE")
+      setSelectedCategory("CHOOSE")
     }
     
   }
