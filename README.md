@@ -1,4 +1,4 @@
-A Trivia game that will ask the user to select a topic and then generates a 5 question quiz based on that topic. 
+A Trivia game that based off a user-selected topic, generates a 5 question quiz.   
 This is my first official React project that was made from scratch. This was a very fun project and I learned a lot while working on it.
 
 Skills demonstrated:  
