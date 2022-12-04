@@ -33,6 +33,15 @@ export default function Question(props){
         
     }
 
+    //Problem where we had a string like &#39;Test&#39; for ex so it wouldn't
+    //display the actual symbol so these lines of code fix that
+    //credit: https://stackoverflow.com/questions/47962519/html-special-character-symbol-not-rendering-in-react-component
+    function decodeString(strToDecode){
+        const parser = new DOMParser();
+        const decodedString = parser.parseFromString(`<!doctype html><body>${strToDecode}`, 'text/html').body.textContent;
+        return decodedString
+    }
+
 
     const answerButtonElements = props.all_answers.map(answer => {
         return <button 
@@ -40,12 +49,20 @@ export default function Question(props){
                 onClick={ props.revealAnswers ? undefined : ()=> props.chooseAnswer(props.id,answer)}
                 key={nanoid()}
                 style={chooseStyle(answer)}
-                >{answer}</button>
+                
+                >{decodeString(answer)}</button>
     })
 
+    const getDecodedString = (str) => {
+        const txt = document.createElement('textarea');
+        txt.innerHTML = str;
+        return txt.value;
+    };
+   
     return(
+
         <div className="trivia-question">
-            <div className="trivia-question-title">{props.question}</div>
+            <div className="trivia-question-title">{decodeString(props.question)}</div>
             <div className="answers-div">{answerButtonElements}</div>
         </div>
 
