@@ -53,12 +53,6 @@ export default function Question(props){
                 >{decodeString(answer)}</button>
     })
 
-    const getDecodedString = (str) => {
-        const txt = document.createElement('textarea');
-        txt.innerHTML = str;
-        return txt.value;
-    };
-   
     return(
 
         <div className="trivia-question">
