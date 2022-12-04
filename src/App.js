@@ -24,7 +24,7 @@ export default function App() {
   React.useEffect( () => {
     if(!revealAnswers){
       if(selectedCategory === 'GENERAL_KNOWLEDGE'){
-        fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple'+`&${Math.random()}`)
+        fetch('https://opentdb.com/api.php?amount=5&category=9&type=multiple')
         .then(res => res.json())
         .then(dataRecieved => setData(dataRecieved.results))
         .then(data => mapData(data))
@@ -88,11 +88,8 @@ export default function App() {
     }
     //if answers are revealed we want to reset gamestate  
     else{
-      console.log('hi')
       setRevealAnswers(false)
       setSection("home-section")
-      console.log('hi')
-      setScore(0)
       setSelectedCategory("CHOOSE")
     }
     
