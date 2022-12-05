@@ -5,7 +5,7 @@ Skills demonstrated:
 -React (states, effects, components, props, conditional rendering)  
 -JSX  
 -JavaScript (ES6, functions,objects)  
--CSS/HTML (Flexbox, grid)  
+-CSS/HTML (Flexbox, Grid)  
 -API calls  
 
 To view the application visit:  
