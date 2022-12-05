@@ -2,7 +2,7 @@ A Trivia game that generates a 5 question quiz based off a user-selected topic.
 This was a very challenging project and I learned a lot while working on it.
 
 Skills demonstrated:  
--React (states, effects, components, conditional rendering)  
+-React (states, effects, components, props, conditional rendering)  
 -JSX  
 -JavaScript (ES6, functions,objects)  
 -CSS/HTML (Flexbox, grid)  
