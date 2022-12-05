@@ -4,7 +4,7 @@ This was a very challenging project and I learned a lot while working on it.
 Skills demonstrated:  
 -React (states, effects, components, conditional rendering)  
 -JSX  
--JavaScript (ES6, functions)  
+-JavaScript (ES6, functions,objects)  
 -CSS/HTML (Flexbox, grid)  
 -API calls  
 
