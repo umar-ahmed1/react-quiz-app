@@ -1,5 +1,5 @@
-A Trivia game that based off a user-selected topic, generates a 5 question quiz.   
-This is my first official React project that was made from scratch. This was a very fun project and I learned a lot while working on it.
+A Trivia game that generates a 5 question quiz based off a user-selected topic.     
+This was a very challenging project and I learned a lot while working on it.
 
 Skills demonstrated:  
 -React (states, effects, components, conditional rendering)  
@@ -18,3 +18,4 @@ This project is open-source so anyone can view the code and edit it. Here are so
 -Display the user's best score (overall or for each topic)  
 -Allow the user to select how many questions they want and the difficulty of questions  
 -Store the users previous results in localStorage and display on click of a button  
+-Track the scores/trivia's completed of other users in some database
